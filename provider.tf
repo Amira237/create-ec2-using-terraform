@@ -37,14 +37,14 @@ terraform {
 resource "aws_security_group" "allow_ssh" {
   name        = "amira_security_group_allow_ssh"
   description = "Allow ssh inbound traffic"
- 
+  
 
   ingress {
     description      = "ssh from VPC"
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    
+    cidr_blocks=["0.0.0.0/0"]
     
   }
 
